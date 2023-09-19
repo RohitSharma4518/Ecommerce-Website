@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      var count = 1;
+      var totalvalue = 15000;
+      function addproduct() {
+        count += 1;
+        totalvalue *= count
+        output.innerHTML = count;
+        output2.innerHTML = totalvalue;
+      }
+
+      function myFunction() {
+        document.getElementById("fire").style.visibility = "hidden";
+        document.getElementById("water").style.visibility = "visible";
+      }
+      function myFunction2() {
+        if (count > 1) {
+          count -= 1;
+          totalvalue = 15000 * count
+          output.innerHTML = count;
+          output2.innerHTML = totalvalue;
+        } else {
+          document.getElementById("fire").style.visibility = "visible";
+          document.getElementById("water").style.visibility = "hidden";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="main">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <img src="assets/carticon.png" alt="" width="35px" />
+          &nbsp;
+          <a class="navbar-brand" href="#">MyShop</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <!-- ml-auto still works just fine-->
+            <div class="navbar-nav ml-auto">
+              <form class="form-inline my-2 my-lg-0">
+                <input
+                  class="form-control mr-sm-2"
+                  type="search"
+                  placeholder="Search Product here.."
+                  aria-label="Search"
+                />
+                <button
+                  class="btn btn-outline-success my-2 my-sm-0"
+                  type="submit"
+                >
+                  Search
+                </button>
+              </form>
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+              <a class="nav-link active" aria-current="page" href="about.html"
+                >About</a
+              >
+              <a class="nav-link active" aria-current="page" href="contact.html"
+                >Contact</a
+              >
+              <button class="btn" style="color: white">
+                <img src="assets/shopcart.png" alt="" width="30px" />
+                &nbsp;Cart(0)
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Library</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Data</li>
+        </ol>
+      </nav>
+      <div class="card mb-3" style="width: 100%; height: 100%">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="assets/watch2.jpg" class="card-img" alt="..." />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Titan</h5>
+              <h5 class="card-title">Description:</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
+                adipisci, rerum fugit temporibus iusto officia? Dolorum natus
+                laborum ipsum voluptates consequuntur nemo facilis sunt ex
+                possimus quisquam quo similique vitae soluta autem inventore
+                quidem perferendis iusto deleniti, sed error, dolores cumque
+                quasi debitis? Accusantium explicabo voluptate placeat, natus
+                alias voluptatibus delectus sunt, eos magni architecto sit
+                dignissimos minus id. Non iure laboriosam saepe illo quae ad
+                inventore libero tenetur, fugiat mollitia nisi laborum quis
+                commodi veritatis dolorum! Modi in cumque nostrum inventore rem
+                corporis pariatur magni eius recusandae laudantium ab corrupti
+                assumenda molestias dignissimos dolor ducimus deserunt, eveniet
+                architecto unde!
+              </p>
+              <button
+                type="button"
+                class="btn btn-info"
+                onclick="myFunction(); addtocart();"
+                id="fire">Add to Cart</button>
+              <span style="visibility: hidden" id="water">
+                <span>Quantity:</span>
+                <button
+                  type="button"
+                  class="btn btn-info"
+                  onclick="myFunction2()"
+                  style="font-weight: 900">-</button>
+                <span id="output">1</span>
+                <button
+                  type="button"
+                  class="btn btn-info"
+                  onclick="addproduct()"
+                  style="font-weight: 900">+</button>
+                <p>Total Price: <span id="output2"></span></p>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
